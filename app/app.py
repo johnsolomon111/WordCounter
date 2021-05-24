@@ -20,3 +20,9 @@ def wordcount():
         if results['status'] == 'ok':
             addCount(usr_input['word'], usr_input['url'],results['count'])
         return results
+    else:
+        to_return = {
+            'status' : 'fail',
+            'msg' : 'could not parse the page'
+        }
+        return to_return
