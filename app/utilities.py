@@ -46,8 +46,11 @@ def checkUrl(url):
     '''
         Check url validity using python requests
     '''
-    req = requests.get(url)
-    if req.status_code == 200:
-        return True
-    else:
+    try:
+        req = requests.get(url)
+        if req.status_code == 200:
+            return True
+        else:
+            return False
+    except Exception as e:
         return False
